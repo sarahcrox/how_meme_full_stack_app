@@ -71,8 +71,8 @@ class Meme extends Component {
 
 function mapStateToProps(state) {
     return {
-        favorites: state.reducer.favrited
+        favorites: state.reducer.favorited
     }
 }
 
-export default connect(mapStateToProps, {unfavorite, favorited})(withRouter(Meme))
+export default connect(mapStateToProps)((Meme))

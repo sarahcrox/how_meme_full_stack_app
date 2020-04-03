@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const session = require("express-session")
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process;
+const session = require("express-session");
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const ctrl = require("./controller");
 const favCtrl = require("./favController");
 
@@ -21,7 +21,7 @@ app.use(session({
 
 // ENDPOINTS
 app.get("/api/memes/:id", ctrl.getMeme);
-app.get("/api/memse", ctrl.getAllMemes);
+app.get("/api/memes", ctrl.getAllMemes);
 app.post("/api/memes", ctrl.addMeme);
 app.post("/api/favorites", favCtrl.addFav)
 app.put("/api/memes/:id", ctrl.updateMeme);

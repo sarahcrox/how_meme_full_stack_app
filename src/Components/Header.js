@@ -1,10 +1,18 @@
-import React from 'react'
-import {withRouter, Link} from 'react-router-dom'
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
-function Header(props){
+export default class Header extends Component{
+    constructor(props){
+        super(props)
+        this.state={
+
+        };
+    }
+
+    render(){
     return(
         <div className='nav-bar'>
-            <div onClick={() => props.history.push('/')} className='logo'>
+            <div onClick={() => this.props.history.push('/')} className='logo'>
                 HowMeme
             </div>
             <div className='nav-bar-links'>
@@ -14,7 +22,5 @@ function Header(props){
                 <Link to='/contact-us'>Contact Us</Link>
             </div>
         </div>
-    )
+    )}
 }
-
-export default Header

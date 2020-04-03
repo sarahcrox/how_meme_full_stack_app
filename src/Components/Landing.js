@@ -1,6 +1,7 @@
-import React from "react";
+import React, {Component} from "react";
 
-class Landing(props) {
+class Landing extends Component{
+	render() {
 	return (
 		<div className="landing-box">
 			<mark>Welcome to HowMeme!</mark>
@@ -8,6 +9,7 @@ class Landing(props) {
 			Follow the links above to find out why we are so great!
 		</div>
 	);
+	}
 }
 
 export default Landing;
